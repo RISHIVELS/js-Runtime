@@ -34,5 +34,23 @@
       const logMessage = `\x1b[1;35m[${time}][message]:\x1b[0m ${message}`;
       core.print(`${logMessage}\n`, true);
     },
+    error: (...args) => {
+      const time = getCurrentTime();
+      const errorMessage = argsToMessage(...args);
+      const logMessage = `\x1b[1;31m[${time}][error]:\x1b[0m ${errorMessage}`;
+      core.print(`${logMessage}\n`, true);
+    },
+    warn: (...args) => {
+      const time = getCurrentTime();
+      const warnMessage = argsToMessage(...args);
+      const logMessage = `\x1b[1;33m[${time}][warn]:\x1b[0m ${warnMessage}`;
+      core.print(`${logMessage}\n`, true);
+    },
+    debug: (...args) => {
+      const time = getCurrentTime();
+      const debugMessage = argsToMessage(...args);
+      const logMessage = `\x1b[1;34m[${time}][debug]:\x1b[0m \x1b[34m ${debugMessage} \x1b[0m`;
+      core.print(`${logMessage}\n`, true);
+    },
   };
 })(globalThis);
