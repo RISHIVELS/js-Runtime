@@ -1,3 +1,2 @@
-Deno.core.print(
-  "Hello code cycle team you're doing great job !!! (this is from example.js)\n"
-);
+console.log("Logger Message");
+console.sarcasm("This is my custom function's Message");
